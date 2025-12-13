@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4c1d95;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1b4b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shield" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0" />
+      <animate attributeName="x1" values="-100%;200%" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="0%;300%" dur="3s" repeatCount="indefinite" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Glow behind shield -->
+  <ellipse cx="100" cy="100" rx="85" ry="95" fill="url(#glow)">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Simple shield -->
+  <g transform="translate(100,100)">
+    <path d="M0,-90 L70,-82 L70,25 Q70,55 0,90 Q-70,55 -70,25 L-70,-82 Z" 
+          fill="url(#shield)" 
+          stroke="#fbbf24" 
+          stroke-width="5"/>
+    
+    <!-- Shimmer overlay -->
+    <path d="M0,-90 L70,-82 L70,25 Q70,55 0,90 Q-70,55 -70,25 L-70,-82 Z" 
+          fill="url(#shimmer)" 
+          opacity="0.7"/>
+  </g>
+</svg>
